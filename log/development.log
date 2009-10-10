@@ -585,3 +585,161 @@ Processing VotesController#index (for 127.0.0.1 at 2009-10-10 15:52:27) [GET]
 Rendering template within layouts/application
 Rendering votes/index
 Completed in 7ms (View: 3, DB: 1) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 15:55:58) [GET]
+  [4;35;1mVoteCount Load (0.4ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+
+ActionView::TemplateError (undefined method `free' for #<VoteCount:0x2560ac0>) on line #1 of app/views/votes/index.erb:
+1: <body class="<% @vote_count.jail_him > @vote_count.free ? "blue" : "black"%>">
+2: jail him: <%= @vote_count.jail_him %><br />
+3: free him: <%= @vote_count.free_him %><br />
+
+    app/views/votes/index.erb:1
+
+Rendered rescues/_trace (29.8ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 15:56:08) [GET]
+  [4;36;1mVoteCount Load (0.4ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 15:56:16) [GET]
+  [4;35;1mVoteCount Load (0.4ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 52ms (View: 49, DB: 0) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 15:56:23) [GET]
+  [4;36;1mVoteCount Load (0.4ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 15:56:34) [GET]
+  [4;35;1mVoteCount Load (0.4ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#new (for 127.0.0.1 at 2009-10-10 15:56:40) [GET]
+Rendering template within layouts/application
+Rendering votes/new
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-10-10 15:56:41) [POST]
+  Parameters: {"x"=>"40", "vote"=>{"positive"=>""}, "y"=>"33", "authenticity_token"=>"7KtO2qjn1d0IETIsThzPXxyZIDasQOxkkBQNOP0N4Jg="}
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("updated_at", "positive", "ip", "created_at") VALUES('2009-10-10 19:56:41', NULL, '127.0.0.1', '2009-10-10 19:56:41')[0m
+  [4;35;1mVoteCount Load (0.2ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+  [4;36;1mVoteCount Update (0.1ms)[0m   [0;1mUPDATE "vote_counts" SET "negative" = 3, "updated_at" = '2009-10-10 19:56:41' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/votes
+Completed in 200ms (DB: 1) | 302 Found [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 15:56:42) [GET]
+  [4;35;1mVoteCount Load (0.5ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-10-10 15:56:43) [POST]
+  Parameters: {"x"=>"40", "vote"=>{"positive"=>""}, "y"=>"33", "authenticity_token"=>"7KtO2qjn1d0IETIsThzPXxyZIDasQOxkkBQNOP0N4Jg="}
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("updated_at", "positive", "ip", "created_at") VALUES('2009-10-10 19:56:43', NULL, '127.0.0.1', '2009-10-10 19:56:43')[0m
+  [4;35;1mVoteCount Load (0.2ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+  [4;36;1mVoteCount Update (0.1ms)[0m   [0;1mUPDATE "vote_counts" SET "negative" = 4, "updated_at" = '2009-10-10 19:56:43' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/votes
+Completed in 52ms (DB: 1) | 302 Found [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 15:56:43) [GET]
+  [4;35;1mVoteCount Load (0.4ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-10-10 15:56:44) [POST]
+  Parameters: {"x"=>"40", "vote"=>{"positive"=>""}, "y"=>"33", "authenticity_token"=>"7KtO2qjn1d0IETIsThzPXxyZIDasQOxkkBQNOP0N4Jg="}
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("updated_at", "positive", "ip", "created_at") VALUES('2009-10-10 19:56:44', NULL, '127.0.0.1', '2009-10-10 19:56:44')[0m
+  [4;35;1mVoteCount Load (0.2ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+  [4;36;1mVoteCount Update (0.1ms)[0m   [0;1mUPDATE "vote_counts" SET "negative" = 5, "updated_at" = '2009-10-10 19:56:44' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/votes
+Completed in 56ms (DB: 1) | 302 Found [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 15:56:44) [GET]
+  [4;35;1mVoteCount Load (0.4ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#new (for 127.0.0.1 at 2009-10-10 15:59:50) [GET]
+Rendering template within layouts/application
+Rendering votes/new
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-10-10 15:59:55) [POST]
+  Parameters: {"x"=>"86", "vote"=>{"positive"=>"true"}, "y"=>"30", "authenticity_token"=>"81R7YrPKh40pqIzTxKVqfmKQL774QnmoQHba4IYf/gw="}
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("updated_at", "positive", "ip", "created_at") VALUES('2009-10-10 19:59:55', 't', '127.0.0.1', '2009-10-10 19:59:55')[0m
+  [4;35;1mVoteCount Load (0.2ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+  [4;36;1mVoteCount Update (0.1ms)[0m   [0;1mUPDATE "vote_counts" SET "positive" = 6, "updated_at" = '2009-10-10 19:59:55' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/votes
+Completed in 55ms (DB: 1) | 302 Found [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 15:59:55) [GET]
+  [4;35;1mVoteCount Load (0.4ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/votes]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 15:59:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/jailed" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 16:00:08) [GET]
+  [4;36;1mVoteCount Load (0.4ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#new (for 127.0.0.1 at 2009-10-10 16:00:13) [GET]
+Rendering template within layouts/application
+Rendering votes/new
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-10-10 16:00:14) [POST]
+  Parameters: {"x"=>"45", "vote"=>{"positive"=>""}, "y"=>"31", "authenticity_token"=>"81R7YrPKh40pqIzTxKVqfmKQL774QnmoQHba4IYf/gw="}
+  [4;35;1mVote Create (0.3ms)[0m   [0mINSERT INTO "votes" ("updated_at", "positive", "ip", "created_at") VALUES('2009-10-10 20:00:14', NULL, '127.0.0.1', '2009-10-10 20:00:14')[0m
+  [4;36;1mVoteCount Load (0.2ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+  [4;35;1mVoteCount Update (0.1ms)[0m   [0mUPDATE "vote_counts" SET "negative" = 6, "updated_at" = '2009-10-10 20:00:14' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/votes
+Completed in 47ms (DB: 1) | 302 Found [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 16:00:14) [GET]
+  [4;36;1mVoteCount Load (0.4ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/votes]

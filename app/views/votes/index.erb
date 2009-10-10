@@ -1,2 +1,12 @@
-jail him: <%= @vote_count.jail_him %><br />
-free him: <%= @vote_count.free_him %><br />
+<body class="<%= @vote_count.jail_him > @vote_count.free_him ? "black" : "blue" %>">
+  <div class='results'>
+    <h2>Polanski: Jail Him or Free Him?</h2>
+    
+    <% img = @vote_count.jail_him > @vote_count.free_him ? "jailed.png" : "freed.png" %>
+    
+    <%= image_tag img, :class => "result_img" %>
+    
+    jail him! <%= @vote_count.jail_him %><br />
+    free him! <%= @vote_count.free_him %><br />
+  </div>
+</body>

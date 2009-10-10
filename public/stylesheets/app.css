@@ -7,6 +7,14 @@ body.gray {
   background-color: #505153;
 }
 
+body.blue {
+  background-color: #46B2E9;
+}
+
+body.black {
+  background-color: #000;
+}
+
 div.vote {
   width: 600px;
   margin: 0 auto;
