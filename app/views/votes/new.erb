@@ -1,9 +1,23 @@
-<% form_for @vote do |f| %>
-  jail <%= f.hidden_field :positive, :value => true %>
-  <%= image_submit_tag "jail_him.png" %>
-<% end %>
+<body class='gray'>
+  <div class='vote'>
+      <%= image_tag "polanski.png", :class => "polanski" %>
 
-<% form_for @vote do |f| %>
-  free <%= f.hidden_field :positive, :value => false %>
-  <%= image_submit_tag "free_him.png" %>
-<% end %>
+      <div class='forms selfclear'>
+
+        <div class='form'>
+          <% form_for @vote do |f| %>
+            <%= f.hidden_field :positive, :value => true %>
+            <%= image_submit_tag "jail_him.png" %>
+          <% end %>
+        </div>
+        
+        <div class='form'>
+          <% form_for @vote do |f| %>
+            <%= f.hidden_field :positive, :value => false %>
+            <%= image_submit_tag "free_him.png" %>
+          <% end %>
+        </div>
+      
+      </div>
+  </div>
+</body>
