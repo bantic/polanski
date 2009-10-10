@@ -1,0 +1,9 @@
+<% form_for @vote do |f| %>
+  jail <%= f.hidden_field :positive, :value => true %>
+  <%= image_submit_tag "jail_him.png" %>
+<% end %>
+
+<% form_for @vote do |f| %>
+  free <%= f.hidden_field :positive, :value => false %>
+  <%= image_submit_tag "free_him.png" %>
+<% end %>

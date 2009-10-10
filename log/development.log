@@ -1,0 +1,366 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVotes (20091010164708)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ip" varchar(255), "positive" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091010164708')[0m
+Migrating to CreateVotecounts (20091010164735)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "votecounts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "positive" integer, "negative" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091010164735')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("votecounts")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+
+
+Processing VotesController#new (for 127.0.0.1 at 2009-10-10 12:59:20) [GET]
+Rendering votes/new
+Completed in 28ms (View: 24, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-10-10 12:59:23) [POST]
+  Parameters: {"commit"=>"Vote", "vote"=>{"positive"=>"true"}, "authenticity_token"=>"81R7YrPKh40pqIzTxKVqfmKQL774QnmoQHba4IYf/gw="}
+  [4;36;1mVote Create (0.4ms)[0m   [0;1mINSERT INTO "votes" ("updated_at", "positive", "ip", "created_at") VALUES('2009-10-10 16:59:23', 't', '127.0.0.1', '2009-10-10 16:59:23')[0m
+
+NameError (uninitialized constant Vote::VoteCount):
+  app/models/vote.rb:7:in `increment_vote_count'
+  app/controllers/votes_controller.rb:8:in `create'
+
+Rendered rescues/_trace (32.0ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 12:59:58) [GET]
+
+NameError (uninitialized constant VotesController::VoteCount):
+  app/controllers/votes_controller.rb:14:in `index'
+
+Rendered rescues/_trace (23.2ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 13:00:28) [GET]
+
+SyntaxError (/Users/coryforsyth/Sites/romanski2/app/models/vote_count.rb:3: syntax error, unexpected tASSOC, expecting ')'
+    VoteCount.first(:conditions => :name => "Roman Polanski")
+                                           ^
+/Users/coryforsyth/Sites/romanski2/app/models/vote_count.rb:3: syntax error, unexpected ')', expecting kEND):
+  app/controllers/votes_controller.rb:14:in `index'
+
+Rendered rescues/_trace (26.1ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 13:00:42) [GET]
+  [4;36;1mVoteCount Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: vote_counts: SELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: vote_counts: SELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski')  LIMIT 1):
+  app/models/vote_count.rb:3:in `roman_polanski'
+  app/controllers/votes_controller.rb:14:in `index'
+
+Rendered rescues/_trace (39.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (38.1ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.3ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVotes (20091010164708)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ip" varchar(255), "positive" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091010164708')[0m
+Migrating to CreateVotecounts (20091010164735)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "vote_counts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "positive" integer, "negative" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091010164735')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("vote_counts")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("votes")[0m
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 13:01:20) [GET]
+  [4;36;1mVoteCount Load (0.3ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering votes/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.positive) on line #1 of app/views/votes/index.erb:
+1: for: <%= @vote_count.positive %><br />
+2: against: <%= @vote_count.negative %><br />
+
+    app/views/votes/index.erb:1
+
+Rendered rescues/_trace (27.1ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (43.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVotes (20091010164708)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ip" varchar(255), "positive" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091010164708')[0m
+Migrating to CreateVotecounts (20091010164735)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (43.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVotes (20091010164708)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ip" varchar(255), "positive" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091010164708')[0m
+Migrating to CreateVotecounts (20091010164735)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (41.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (3.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateVotes (20091010164708)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ip" varchar(255), "positive" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091010164708')[0m
+Migrating to CreateVoteCounts (20091010164735)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "vote_counts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "positive" integer, "negative" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0minsert into vote_counts (`name`,`positive`,`negative`) values ('Roman Polanski',0,0)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091010164735')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("vote_counts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("votes")[0m
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 13:02:54) [GET]
+  [4;36;1mVoteCount Load (0.5ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering votes/index
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#new (for 127.0.0.1 at 2009-10-10 13:02:56) [GET]
+Rendering votes/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/votes/new]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-10-10 13:02:59) [POST]
+  Parameters: {"commit"=>"Vote", "vote"=>{"positive"=>"true"}, "authenticity_token"=>"81R7YrPKh40pqIzTxKVqfmKQL774QnmoQHba4IYf/gw="}
+  [4;35;1mVote Create (0.3ms)[0m   [0mINSERT INTO "votes" ("updated_at", "positive", "ip", "created_at") VALUES('2009-10-10 17:02:59', 't', '127.0.0.1', '2009-10-10 17:02:59')[0m
+  [4;36;1mVoteCount Load (0.2ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+  [4;35;1mVoteCount Update (0.1ms)[0m   [0mUPDATE "vote_counts" SET "positive" = 1, "updated_at" = '2009-10-10 17:02:59' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/votes
+Completed in 26ms (DB: 1) | 302 Found [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 13:02:59) [GET]
+  [4;36;1mVoteCount Load (0.4ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering votes/index
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#new (for 127.0.0.1 at 2009-10-10 13:03:03) [GET]
+Rendering votes/new
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/votes/new]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-10-10 13:03:06) [POST]
+  Parameters: {"commit"=>"Vote", "vote"=>{"positive"=>"false"}, "authenticity_token"=>"81R7YrPKh40pqIzTxKVqfmKQL774QnmoQHba4IYf/gw="}
+  [4;35;1mVote Create (0.3ms)[0m   [0mINSERT INTO "votes" ("updated_at", "positive", "ip", "created_at") VALUES('2009-10-10 17:03:06', 'f', '127.0.0.1', '2009-10-10 17:03:06')[0m
+  [4;36;1mVoteCount Load (0.2ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+  [4;35;1mVoteCount Update (0.1ms)[0m   [0mUPDATE "vote_counts" SET "negative" = 1, "updated_at" = '2009-10-10 17:03:06' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/votes
+Completed in 55ms (DB: 1) | 302 Found [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 13:03:06) [GET]
+  [4;36;1mVoteCount Load (0.4ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering votes/index
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#new (for 127.0.0.1 at 2009-10-10 13:03:08) [GET]
+Rendering votes/new
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-10-10 13:03:12) [POST]
+  Parameters: {"commit"=>"Vote", "vote"=>{"positive"=>"true"}, "authenticity_token"=>"81R7YrPKh40pqIzTxKVqfmKQL774QnmoQHba4IYf/gw="}
+  [4;35;1mVote Create (0.3ms)[0m   [0mINSERT INTO "votes" ("updated_at", "positive", "ip", "created_at") VALUES('2009-10-10 17:03:12', 't', '127.0.0.1', '2009-10-10 17:03:12')[0m
+  [4;36;1mVoteCount Load (0.2ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+  [4;35;1mVoteCount Update (0.1ms)[0m   [0mUPDATE "vote_counts" SET "positive" = 2, "updated_at" = '2009-10-10 17:03:12' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/votes
+Completed in 53ms (DB: 0) | 302 Found [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 13:03:12) [GET]
+  [4;36;1mVoteCount Load (0.5ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering votes/index
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#new (for 127.0.0.1 at 2009-10-10 13:12:27) [GET]
+Rendering votes/new
+
+ActionView::TemplateError (undefined method `merge' for true:TrueClass) on line #2 of app/views/votes/new.erb:
+1: <% form_for @vote do |f| %>
+2:   jail <%= f.hidden_field :positive, true %>
+3:   <%= image_submit_tag "jail_him" %>
+4: <% end %>
+5: 
+
+    app/views/votes/new.erb:2
+    app/views/votes/new.erb:1
+
+Rendered rescues/_trace (75.8ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#new (for 127.0.0.1 at 2009-10-10 13:13:14) [GET]
+Rendering votes/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 13:13:14) [GET]
+
+ActionController::RoutingError (No route matches "/images/jail_him" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-10 13:13:14) [GET]
+
+ActionController::RoutingError (No route matches "/images/free_him" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing VotesController#new (for 127.0.0.1 at 2009-10-10 13:13:29) [GET]
+Rendering votes/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-10-10 13:13:32) [POST]
+  Parameters: {"x"=>"64", "vote"=>{"positive"=>"true"}, "y"=>"34", "authenticity_token"=>"81R7YrPKh40pqIzTxKVqfmKQL774QnmoQHba4IYf/gw="}
+  [4;35;1mVote Create (0.3ms)[0m   [0mINSERT INTO "votes" ("updated_at", "positive", "ip", "created_at") VALUES('2009-10-10 17:13:32', 't', '127.0.0.1', '2009-10-10 17:13:32')[0m
+  [4;36;1mVoteCount Load (0.2ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+  [4;35;1mVoteCount Update (0.1ms)[0m   [0mUPDATE "vote_counts" SET "positive" = 3, "updated_at" = '2009-10-10 17:13:32' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/votes
+Completed in 52ms (DB: 0) | 302 Found [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 13:13:32) [GET]
+  [4;36;1mVoteCount Load (0.5ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering votes/index
+Completed in 6ms (View: 2, DB: 1) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 13:18:11) [GET]
+
+SyntaxError (/Users/coryforsyth/Sites/romanski2/app/models/vote_count.rb:6: syntax error, unexpected ','
+  alias :jail_him, :positive
+                  ^
+/Users/coryforsyth/Sites/romanski2/app/models/vote_count.rb:7: syntax error, unexpected ','
+  alias :free_him, :negative
+                  ^):
+  app/controllers/votes_controller.rb:14:in `index'
+
+Rendered rescues/_trace (26.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 13:18:22) [GET]
+
+NameError (undefined method `positive' for class `VoteCount'):
+  app/models/vote_count.rb:6
+  app/controllers/votes_controller.rb:14:in `index'
+
+Rendered rescues/_trace (25.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 13:19:49) [GET]
+  [4;36;1mVoteCount Load (0.5ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering votes/index
+Completed in 23ms (View: 4, DB: 1) | 200 OK [http://localhost/votes]
+
+
+Processing VotesController#new (for 127.0.0.1 at 2009-10-10 13:19:52) [GET]
+Rendering votes/new
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing VotesController#create (for 127.0.0.1 at 2009-10-10 13:19:54) [POST]
+  Parameters: {"x"=>"70", "vote"=>{"positive"=>"true"}, "y"=>"22", "authenticity_token"=>"81R7YrPKh40pqIzTxKVqfmKQL774QnmoQHba4IYf/gw="}
+  [4;35;1mVote Create (0.5ms)[0m   [0mINSERT INTO "votes" ("updated_at", "positive", "ip", "created_at") VALUES('2009-10-10 17:19:54', 't', '127.0.0.1', '2009-10-10 17:19:54')[0m
+  [4;36;1mVoteCount Load (0.3ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+  [4;35;1mVoteCount Update (0.1ms)[0m   [0mUPDATE "vote_counts" SET "positive" = 4, "updated_at" = '2009-10-10 17:19:54' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/votes
+Completed in 78ms (DB: 1) | 302 Found [http://localhost/votes]
+
+
+Processing VotesController#index (for 127.0.0.1 at 2009-10-10 13:19:54) [GET]
+  [4;36;1mVoteCount Load (0.4ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering votes/index
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/votes]
