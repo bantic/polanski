@@ -1,25 +1,27 @@
 <body class='gray'>
-  <div class='vote'>
-    <h1>Polanski: Jail Him or Free Him?</h1>
+  <div class='container'>
+    <div class='vote'>
+      <h1>Polanski: Jail Him or Free Him?</h1>
     
-      <%= image_tag "polanski.png", :class => "polanski" %>
+        <%= image_tag "polanski.png", :class => "polanski" %>
 
-      <div class='forms selfclear'>
+        <div class='forms selfclear'>
 
-        <div class='form'>
-          <% form_for @vote do |f| %>
-            <%= f.hidden_field :positive, :value => true %>
-            <%= image_submit_tag "jail_him.png" %>
-          <% end %>
-        </div>
+          <div class='form'>
+            <% form_for @vote do |f| %>
+              <%= f.hidden_field :positive, :value => true %>
+              <%= image_submit_tag "jail_him.png" %>
+            <% end %>
+          </div>
         
-        <div class='form'>
-          <% form_for @vote do |f| %>
-            <%= f.hidden_field :positive, :value => false %>
-            <%= image_submit_tag "free_him.png" %>
-          <% end %>
-        </div>
+          <div class='form'>
+            <% form_for @vote do |f| %>
+              <%= f.hidden_field :positive, :value => false %>
+              <%= image_submit_tag "free_him.png" %>
+            <% end %>
+          </div>
       
-      </div>
+        </div>
+    </div>
   </div>
 </body>
