@@ -1,4 +1,7 @@
 class VotesController < ApplicationController
+  cache_sweeper :vote_sweeper, :only => [:create]
+  caches_page :index
+  
   def new
     @vote = Vote.new
   end
