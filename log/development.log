@@ -1805,3 +1805,103 @@ Processing VotesController#index (for 172.16.19.1 at 2009-10-11 13:48:04) [GET]
 Rendering template within layouts/application
 Rendering votes/index
 Completed in 6ms (View: 3, DB: 0) | 200 OK [http://172.16.19.1/votes]
+
+
+Processing VotesController#index (for 172.16.19.1 at 2009-10-11 13:50:32) [GET]
+  [4;35;1mVoteCount Load (0.4ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://172.16.19.1/votes]
+
+
+Processing VotesController#new (for 172.16.19.1 at 2009-10-11 13:50:40) [GET]
+Rendering template within layouts/application
+Rendering votes/new
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://172.16.19.1/votes/new]
+
+
+Processing VotesController#new (for 172.16.19.1 at 2009-10-11 13:52:29) [GET]
+Rendering template within layouts/application
+Rendering votes/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://172.16.19.1/votes/new]
+
+
+Processing VotesController#new (for 172.16.19.1 at 2009-10-11 13:53:02) [GET]
+Rendering template within layouts/application
+Rendering votes/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://172.16.19.1/votes/new]
+
+
+Processing VotesController#new (for 172.16.19.1 at 2009-10-11 13:53:28) [GET]
+Rendering template within layouts/application
+Rendering votes/new
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://172.16.19.1/votes/new]
+
+
+Processing VotesController#new (for 172.16.19.1 at 2009-10-11 13:53:58) [GET]
+Rendering template within layouts/application
+Rendering votes/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://172.16.19.1/votes/new]
+
+
+Processing VotesController#new (for 172.16.19.1 at 2009-10-11 13:54:07) [GET]
+Rendering template within layouts/application
+Rendering votes/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://172.16.19.1/votes/new]
+
+
+Processing VotesController#create (for 172.16.19.1 at 2009-10-11 13:54:10) [POST]
+  Parameters: {"x"=>"104", "vote"=>{"positive"=>"true"}, "y"=>"20", "authenticity_token"=>"lgtMbpjyaXZQSuu0MuaMrpS9zMWgdKCqbPgchstr8qw="}
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("updated_at", "positive", "ip", "created_at") VALUES('2009-10-11 17:54:10', 't', '172.16.19.1', '2009-10-11 17:54:10')[0m
+  [4;35;1mVoteCount Load (0.2ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+  [4;36;1mVoteCount Update (0.2ms)[0m   [0;1mUPDATE "vote_counts" SET "positive" = 15, "updated_at" = '2009-10-11 17:54:10' WHERE "id" = 1[0m
+Redirected to http://172.16.19.1:3000/votes
+Completed in 78ms (DB: 1) | 302 Found [http://172.16.19.1/votes]
+
+
+Processing VotesController#index (for 172.16.19.1 at 2009-10-11 13:54:10) [GET]
+  [4;35;1mVoteCount Load (1.3ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://172.16.19.1/votes]
+
+
+Processing VotesController#new (for 172.16.19.1 at 2009-10-11 13:54:15) [GET]
+Rendering template within layouts/application
+Rendering votes/new
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://172.16.19.1/votes/new]
+
+
+Processing VotesController#create (for 172.16.19.1 at 2009-10-11 13:54:16) [POST]
+  Parameters: {"x"=>"60", "vote"=>{"positive"=>""}, "y"=>"26", "authenticity_token"=>"lgtMbpjyaXZQSuu0MuaMrpS9zMWgdKCqbPgchstr8qw="}
+  [4;36;1mVote Create (0.3ms)[0m   [0;1mINSERT INTO "votes" ("updated_at", "positive", "ip", "created_at") VALUES('2009-10-11 17:54:16', NULL, '172.16.19.1', '2009-10-11 17:54:16')[0m
+  [4;35;1mVoteCount Load (0.2ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+  [4;36;1mVoteCount Update (0.1ms)[0m   [0;1mUPDATE "vote_counts" SET "negative" = 15, "updated_at" = '2009-10-11 17:54:16' WHERE "id" = 1[0m
+Redirected to http://172.16.19.1:3000/votes
+Completed in 51ms (DB: 1) | 302 Found [http://172.16.19.1/votes]
+
+
+Processing VotesController#index (for 172.16.19.1 at 2009-10-11 13:54:16) [GET]
+  [4;35;1mVoteCount Load (0.4ms)[0m   [0mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://172.16.19.1/votes]
+
+
+Processing VotesController#new (for 127.0.0.1 at 2009-10-11 13:54:35) [GET]
+Rendering template within layouts/application
+Rendering votes/new
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/votes/new]
+
+
+Processing VotesController#index (for 172.16.19.1 at 2009-10-11 13:55:45) [GET]
+  [4;36;1mVoteCount Load (0.5ms)[0m   [0;1mSELECT * FROM "vote_counts" WHERE ("vote_counts"."name" = 'Roman Polanski') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering votes/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://172.16.19.1/votes]
+
+
+Processing VotesController#new (for 172.16.19.1 at 2009-10-11 13:55:50) [GET]
+Rendering template within layouts/application
+Rendering votes/new
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://172.16.19.1/votes/new]
