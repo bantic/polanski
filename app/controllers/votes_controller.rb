@@ -5,7 +5,7 @@ class VotesController < ApplicationController
   
   def create
     @vote = Vote.new(params[:vote].merge({:ip => request.remote_ip}))
-    @vote.save
+    @vote.save # ignore errors
     
     redirect_to votes_path
   end

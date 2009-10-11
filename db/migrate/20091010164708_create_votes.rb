@@ -5,6 +5,8 @@ class CreateVotes < ActiveRecord::Migration
       t.boolean :positive
       t.timestamps
     end
+    
+    add_index :votes, [:ip, :created_at]
   end
 
   def self.down
