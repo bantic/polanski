@@ -1,12 +1,28 @@
 <body class="<%= @vote_count.jail_him > @vote_count.free_him ? "black" : "blue" %>">
   <div class='results'>
-    <h2>Polanski: Jail Him or Free Him?</h2>
+    <h1>Polanski: Jail Him or Free Him?</h1>
     
     <% img = @vote_count.jail_him > @vote_count.free_him ? "jailed.png" : "freed.png" %>
     
-    <%= image_tag img, :class => "result_img" %>
-    
-    jail him! <%= @vote_count.jail_him %><br />
-    free him! <%= @vote_count.free_him %><br />
-  </div>
+    <table>
+      <tr>
+        <td colspan='2' align='center'>
+          <%= image_tag img, :class => "result_img" %>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%" align='right'>
+          <div class='voteresult'>
+            <h2 class='jail'>Jail him!</h2><br />
+            <span class='vote_counts'><%= @vote_count.jail_him %> votes</span>
+          </div>
+        </td>
+        <td width="50%" align='left'>
+          <div class='voteresult'>
+            <h2 class='free'>Free him!</h2><br />
+            <span class='vote_counts'><%= @vote_count.free_him %> votes</span>
+          </div>
+        </td>
+      </tr>
+    </table>
 </body>

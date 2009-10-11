@@ -1,6 +1,8 @@
 body {
   margin: 0;
+  margin-top: 30px;
   padding: 0;
+  font-family: Helvetica;
 }
 
 body.gray {
@@ -15,18 +17,75 @@ body.black {
   background-color: #000;
 }
 
+h1 {
+  font-size: 38px;
+}
+
+body.blue h1 {
+  color: black;
+}
+
+body.black h1 {
+  color: white;
+}
+
+body.black h2.jail {
+  color: #FFF;
+}
+
+body.black h2.free {
+  color: #818386;
+}
+
+body.blue h2.jail {
+  color: #444648;
+}
+
+body.blue h2.free {
+  color: #FFF;
+}
+
+table {
+  width: 600px;
+}
+
+h2 {
+  display:inline;
+  font-weight: normal;
+}
+
+div.voteresult {
+  text-align: center;
+  line-height: 40px;
+  width: 140px;
+}
+
 div.vote {
   width: 600px;
   margin: 0 auto;
   text-align: center;
 }
 
+div.results {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+span.vote_counts {
+  margin-top: 10px;
+  background-color: white;
+  font-weight: bold;
+  padding: 4px 8px 2px 8px;
+  font-size: 24px;
+}
+
 div.forms {
   margin-top: 30px;
   width: 351px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
+
 
 div.form {
   float:left;
