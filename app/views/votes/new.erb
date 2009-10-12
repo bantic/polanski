@@ -5,19 +5,22 @@
     
         <%= image_tag "polanski.png", :class => "polanski" %>
 
+        <%= image_tag "jail_on.gif", :style => 'display:none' %>
+        <%= image_tag "free_on.gif", :style => 'display:none' %>
+
         <div class='forms selfclear'>
 
           <div class='form'>
             <% form_for @vote do |f| %>
               <%= f.hidden_field :positive, :value => true %>
-              <%= image_submit_tag "jail_him.png" %>
+              <%= image_submit_tag "jail.gif", :onmouseover => 'this.src="/images/jail_on.gif"', :onmouseout => 'this.src="/images/jail.gif"' %>
             <% end %>
           </div>
         
           <div class='form'>
             <% form_for @vote do |f| %>
               <%= f.hidden_field :positive, :value => false %>
-              <%= image_submit_tag "free_him.png" %>
+              <%= image_submit_tag "free.gif", :onmouseover => 'this.src="/images/free_on.gif"', :onmouseout => 'this.src="/images/free.gif"' %>
             <% end %>
           </div>
       

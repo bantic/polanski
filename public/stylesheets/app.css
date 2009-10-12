@@ -65,6 +65,10 @@ body.blue h2.free {
 	font-size: 14px;
 }
 
+body.black #footer h3 {
+	color: #CCC;
+}
+
 table {
   width: 680px;
 }
