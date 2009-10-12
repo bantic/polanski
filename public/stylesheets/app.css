@@ -35,7 +35,7 @@ body.black h1 {
 }
 
 body.black h2.jail {
-/*  color: #FFF;*/
+  color: #FFF;
 }
 
 body.black h2.free {
@@ -48,6 +48,21 @@ body.blue h2.jail {
 
 body.blue h2.free {
   color: #FFF;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0px;
+	width: 680px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#footer h3 {
+	display: inline;
+	padding: 0 5px 0 5px;
+	font-weight: normal;
+	font-size: 14px;
 }
 
 table {
@@ -88,9 +103,8 @@ span.vote_counts {
 }
 
 div.forms {
-  margin-top: 30px;
   width: 351px;
-  margin: 0 auto;
+  margin: 30px auto 0 auto;
 }
 
 
