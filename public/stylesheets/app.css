@@ -52,13 +52,13 @@ body.blue h2.free {
 
 #footer {
 	position: absolute;
+	border: 1px solid blue;
 	bottom: 0px;
-	width: 680px;
 	text-align: center;
-	margin: 0 auto;
 }
 
 #footer h3 {
+	border: 1px solid red;
 	display: inline;
 	padding: 0 5px 0 5px;
 	font-weight: normal;
