@@ -1,3 +1,6 @@
+<script type="text/javascript">
+  var disqus_developer = 1;
+</script>
 <body class="<%= @vote_count.jail_him > @vote_count.free_him ? "black" : "blue" %>">
   <div class='container'>
     <h1>POLLanski: Jail Him or Free Him?</h1>
@@ -25,6 +28,9 @@
         </td>
       </tr>
     </table>
+    
+    <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/pollanski/embed.js"></script><noscript><a href="http://disqus.com/forums/pollanski/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    
   </div>
   <div id='footer'>
     about | contact
@@ -38,4 +44,18 @@
   var pageTracker = _gat._getTracker("UA-11077036-1");
   pageTracker._trackPageview();
   } catch(err) {}</script>
+  <script type="text/javascript">
+  //<![CDATA[
+  (function() {
+  	var links = document.getElementsByTagName('a');
+  	var query = '?';
+  	for(var i = 0; i < links.length; i++) {
+  	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+  		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+  	}
+  	}
+  	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/pollanski/get_num_replies.js' + query + '"></' + 'script>');
+  })();
+  //]]>
+  </script>
 </body>
