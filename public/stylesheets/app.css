@@ -50,23 +50,12 @@ body.blue h2.free {
   color: #FFF;
 }
 
-#footer {
-	position: absolute;
-	border: 1px solid blue;
-	bottom: 0px;
-	text-align: center;
-}
-
-#footer h3 {
-	border: 1px solid red;
-	display: inline;
-	padding: 0 5px 0 5px;
-	font-weight: normal;
-	font-size: 14px;
-}
-
 body.black #footer h3 {
 	color: #CCC;
+}
+
+#footer {
+	margin-top: 120px;
 }
 
 table {
