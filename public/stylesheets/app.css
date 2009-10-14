@@ -26,12 +26,8 @@ h1 {
 	color: #FFF;
 }
 
-body.blue h1 {
-/*  color: black;*/
-}
-
-body.black h1 {
-/*  color: white;*/
+.yellow {
+  color: yellow;
 }
 
 body.black h2.jail {
@@ -50,7 +46,7 @@ body.blue h2.free {
   color: #FFF;
 }
 
-body.black #footer h3 {
+body.black #footer {
 	color: #CCC;
 }
 
