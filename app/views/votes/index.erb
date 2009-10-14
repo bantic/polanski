@@ -1,9 +1,15 @@
 <script type="text/javascript">
   var disqus_developer = 1;
 </script>
-<body class="<%= @vote_count.jail_him > @vote_count.free_him ? "black" : "blue" %>">
+<% body_class = if flash[:vote]
+    flash[:vote] == "JAIL" ? "black" : "blue"
+  else
+    @vote_count.jail_him > @vote_count.free_him ? "black" : "blue"
+  end
+%>
+<body class="<%= body_class %>">
   <div class='container'>
-    <h1>POLLanski: Jail Him or Free Him?</h1>
+    <h1><span class='yellow'>POLL</span>anski: Jail him or Free him?</h1>
   
     <% img = @vote_count.jail_him > @vote_count.free_him ? "jailed.png" : "freed.png" %>
   
@@ -33,7 +39,7 @@
     
   </div>
   <div id='footer'>
-    about | contact
+    <%= link_to "about", "/about" %> | <a href='mailto:writetojilee@gmail.com'>contact</a>
   </div>
   <script type="text/javascript">
   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

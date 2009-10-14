@@ -9,6 +9,16 @@ body {
   text-align: center;
 }
 
+p a {
+  color: #F2F2F3;
+  text-decoration: none;
+}
+
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
 body.gray {
   background-color: #505153;
 }
@@ -26,12 +36,20 @@ h1 {
 	color: #FFF;
 }
 
-body.blue h1 {
-/*  color: black;*/
+.yellow {
+  color: #FCEF4D;
 }
 
-body.black h1 {
-/*  color: white;*/
+p {
+  text-align: left;
+  color: #F2F2F3;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+#footer p a {
+ color: #000; 
+ text-decoration: underline;
 }
 
 body.black h2.jail {
@@ -50,7 +68,7 @@ body.blue h2.free {
   color: #FFF;
 }
 
-body.black #footer h3 {
+body.black #footer, body.black #footer a {
 	color: #CCC;
 }
 
