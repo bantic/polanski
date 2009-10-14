@@ -1,4 +1,10 @@
-<body class="<%= @vote_count.jail_him > @vote_count.free_him ? "black" : "blue" %>">
+<% body_class = if flash[:vote]
+    flash[:vote] == "JAIL" ? "black" : "blue"
+  else
+    @vote_count.jail_him > @vote_count.free_him ? "black" : "blue"
+  end
+%>
+<body class="<%= body_class %>">
   <div class='container'>
     <h1><span class='yellow'>POLL</span>anski: Jail him or Free him?</h1>
   
