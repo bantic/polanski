@@ -9,6 +9,16 @@ body {
   text-align: center;
 }
 
+p a {
+  color: #F2F2F3;
+  text-decoration: none;
+}
+
+a {
+  color: #000;
+  text-decoration: underline;
+}
+
 body.gray {
   background-color: #505153;
 }
@@ -27,7 +37,19 @@ h1 {
 }
 
 .yellow {
-  color: yellow;
+  color: #FCEF4D;
+}
+
+p {
+  text-align: left;
+  color: #F2F2F3;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+#footer p a {
+ color: #000; 
+ text-decoration: underline;
 }
 
 body.black h2.jail {
@@ -46,7 +68,7 @@ body.blue h2.free {
   color: #FFF;
 }
 
-body.black #footer {
+body.black #footer, body.black #footer a {
 	color: #CCC;
 }
 
