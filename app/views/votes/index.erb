@@ -1,6 +1,8 @@
-<script type="text/javascript">
-  var disqus_developer = 1;
-</script>
+<% if Rails.env == "development" %>
+  <script type="text/javascript">
+    var disqus_developer = 1;
+  </script>
+<% end %>
 <% body_class = if flash[:vote]
     flash[:vote] == "JAIL" ? "black" : "blue"
   else
