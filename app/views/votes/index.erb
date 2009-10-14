@@ -3,17 +3,19 @@
     var disqus_developer = 1;
   </script>
 <% end %>
-<% body_class = if flash[:vote]
-    flash[:vote] == "JAIL" ? "black" : "blue"
+<% page_status = if flash[:vote]
+    flash[:vote]
   else
-    @vote_count.jail_him > @vote_count.free_him ? "black" : "blue"
+    @vote_count.jail_him > @vote_count.free_him ? "JAIL" : "FREE"
   end
+  
+  body_class = page_status == "JAIL" ? "black" : "blue"
 %>
 <body class="<%= body_class %>">
   <div class='container'>
     <h1><span class='yellow'>POLL</span>anski: Jail him or Free him?</h1>
   
-    <% img = @vote_count.jail_him > @vote_count.free_him ? "jailed.png" : "freed.png" %>
+    <% img = page_status == "JAIL" ? "jailed.png" : "freed.png" %>
   
     <table>
       <tr>
