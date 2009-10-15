@@ -1,7 +1,7 @@
 class Vote < ActiveRecord::Base
   after_create :increment_vote_count
   
-  # validate_on_create :not_a_double_vote
+  validate_on_create :not_a_double_vote
   
   private
   
